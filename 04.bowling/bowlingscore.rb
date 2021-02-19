@@ -40,4 +40,5 @@ frames.each do |frame|
   end
   calc << points
 end
+# 結果出力
 puts calc.sum
