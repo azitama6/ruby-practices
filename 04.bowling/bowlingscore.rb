@@ -15,20 +15,18 @@ end
 
 getscore = ARGV[0]
 scores = getscore.split(',')
-scores.map! { |x| x == 'X' ? '10' : x }
 
 shots = []
 # スコアを配列に入れる
 scores.each do |score|
-  # 10だったら０の要素を足す
-  if score == '10'
+  # Xだったら10と０の要素を足す
+  if score == 'X'
     shots << 10
     shots << 0
   else
     shots << score.to_i
   end
 end
-
 frames = []
 
 # 1フレームごとに配列を分ける
