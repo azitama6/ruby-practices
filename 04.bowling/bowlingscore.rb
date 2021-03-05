@@ -23,10 +23,12 @@ end
 frames = shots.each_slice(2).to_a
 
 results = frames.map.with_index(1) do |frame, next_frame|
-  if frame[0] == 10 && next_frame <= 9
-    calculate_strike(frames, next_frame)
-  elsif frame.sum == 10 && next_frame <= 9
-    10 + frames[next_frame][0]
+  if next_frame <= 9 && frame.sum == 10
+    if frame[0] == 10
+      calculate_strike(frames, next_frame)
+    else
+      10 + frames[next_frame][0]
+    end
   else
     frame.sum
   end
