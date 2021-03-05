@@ -2,7 +2,7 @@
 
 def calculate_strike(frames, next_frame)
   if frames[next_frame][0] == 10
-    10 + frames[next_frame][0] + frames[next_frame + 1][0]
+    20 + frames[next_frame + 1][0]
   else
     10 + frames[next_frame].sum
   end
